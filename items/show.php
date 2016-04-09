@@ -4,7 +4,7 @@
 
 <div>
     <h2><?php echo(metadata($item, array("MOL Metadata", "Object Title"))) ?></h2>
-    <p><strong>Biography Author(s): </strong><?php echo(metadata($item, array("MOL Metadata", "Author(s) of the biographies"))) ?></p>
+    <p><strong>Biography Author(s): </strong><?php echo(implode(", ", metadata($item, array("MOL Metadata", "Author(s) of the biographies"), array("all"=>true)))); ?></p>
 </div>
 
 <div id="interrogation">
@@ -40,10 +40,10 @@
 </div>
 
 <div>
-    <p><strong>Material Composition: </strong><?php echo(metadata($item, array("MOL Metadata", "Material Composition"))); ?></p>
-    <p><strong>Functional Category: </strong><?php echo(metadata($item, array("MOL Metadata", "Functional Category"))); ?></p>
-    <p><strong>Rights: </strong><?php echo(metadata($item, array("MOL Metadata", "Rights"))); ?></p>
-    <p><strong>Identifier: </strong><?php echo(metadata($item, array("MOL Metadata", "Identifier"))); ?></p>
+    <p><strong>Material Composition: </strong><?php echo(implode(", ", metadata($item, array("MOL Metadata", "Material Composition"), array("all"=>true)))); ?></p>
+    <p><strong>Functional Category: </strong><?php echo(implode(", ", metadata($item, array("MOL Metadata", "Functional Category"), array("all"=>true)))); ?></p>
+    <p><strong>Rights: </strong><?php echo(implode("<br/>", metadata($item, array("MOL Metadata", "Rights"), array("all"=>true)))); ?></p>
+    <p><strong>Identifier: </strong><?php echo(implode("<br/>", metadata($item, array("MOL Metadata", "Identifier"), array("all"=>true)))); ?></p>
 </div>
 
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
