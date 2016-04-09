@@ -2,26 +2,37 @@
 
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
-    <?php if (get_theme_option('Item FileGallery') == 0 && metadata('item', 'has files')): ?>
-    <div class="element-text"><?php echo files_for_item(array('imageSize' => 'fullsize')); ?></div>
+<div id="interrogation">
+    <div id="questions">
+    <?php 
+        $questions=array(
+            'What is it?',
+            'Why was it made?',
+            'Who made it?',
+            'Where was it produced?',
+            'Where did it go?',
+            'When was it made?',
+            'How was it used?',
+            'How was it made?');
+        shuffle($questions);
+        foreach ($questions as $question): ?>
+        <div class="question">
+            <h2><?php echo($question); ?></h2>
+            <div class="answer">
+                <h3>&lt;- <?php echo($question); ?></h3>
+                <?php echo( metadata($item, array('MOL Metadata',$question)) ); ?>
+            </div>
+        </div>
+        <?php endforeach ?>
+    </div>
+    <div id="interrogation-media">
+    <?php if ($model = metadata($item, array('MOL Metadata','3D Model'))): ?>
+        <?php echo($model); ?>
+    <?php else: ?>
+        <?php echo files_for_item(array('imageSize' => 'fullsize')); ?>
     <?php endif; ?>
-
-<?php 
-    $questions=array(
-        'What is it?',
-        'Why was it made?',
-        'Who made it?',
-        'Where was it produced?',
-        'Where did it go?',
-        'When was it made?',
-        'How was it used?',
-        'How was it made?');
-    shuffle($questions);
-    foreach ($questions as $question) {
-        echo "<h2>$question</h2>";
-        echo( metadata($item, array('MOL Metadata',$question)) );
-    }
-    ?>
+    </div>
+</div>
 <?php //echo all_element_texts('item', array('show_element_sets'=>array('MOL Metadata'))); ?>
 
 <!-- The following returns all of the files associated with an item. -->

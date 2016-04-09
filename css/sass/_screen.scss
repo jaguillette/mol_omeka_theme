@@ -135,6 +135,10 @@ blockquote {
     overflow: visible;
 }
 
+#content:focus {
+  outline: none;
+}
+
 #content .item img,
 .item #content img,
 .image img {
@@ -488,8 +492,6 @@ optgroup {
 /* @end */
 
 /* @group ----- Theme-Specific Form Elements ----- */
-
-legend { @extend h3; }
 
 fieldset {
     display:block;

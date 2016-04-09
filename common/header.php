@@ -94,6 +94,7 @@
     queue_js_file('vendor/jquery-accessibleMegaMenu');
     queue_js_file('globals');
     queue_js_file('default');
+    queue_js_file('mol');
     echo head_js(); 
     ?>
 </head>

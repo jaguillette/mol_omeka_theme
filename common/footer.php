@@ -26,6 +26,7 @@
         ThanksRoy.mobileMenu();
     });
     </script>
+    <?php echo js_tag('mol'); ?>
 
 </body>
 </html>
