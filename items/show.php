@@ -6,8 +6,23 @@
     <div class="element-text"><?php echo files_for_item(array('imageSize' => 'fullsize')); ?></div>
     <?php endif; ?>
 
-
-<?php echo all_element_texts('item'); ?>
+<?php 
+    $questions=array(
+        'What is it?',
+        'Why was it made?',
+        'Who made it?',
+        'Where was it produced?',
+        'Where did it go?',
+        'When was it made?',
+        'How was it used?',
+        'How was it made?');
+    shuffle($questions);
+    foreach ($questions as $question) {
+        echo "<h2>$question</h2>";
+        echo( metadata($item, array('MOL Metadata',$question)) );
+    }
+    ?>
+<?php //echo all_element_texts('item', array('show_element_sets'=>array('MOL Metadata'))); ?>
 
 <!-- The following returns all of the files associated with an item. -->
 <?php if (metadata('item', 'has files') && (get_theme_option('Item FileGallery') == 1)): ?>
