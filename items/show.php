@@ -2,6 +2,11 @@
 
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
+<div>
+    <h2><?php echo(metadata($item, array("MOL Metadata", "Object Title"))) ?></h2>
+    <p><strong>Biography Author(s): </strong><?php echo(metadata($item, array("MOL Metadata", "Author(s) of the biographies"))) ?></p>
+</div>
+
 <div id="interrogation">
     <div id="questions">
     <?php 
@@ -33,15 +38,13 @@
     <?php endif; ?>
     </div>
 </div>
-<?php //echo all_element_texts('item', array('show_element_sets'=>array('MOL Metadata'))); ?>
 
-<!-- The following returns all of the files associated with an item. -->
-<?php if (metadata('item', 'has files') && (get_theme_option('Item FileGallery') == 1)): ?>
-<div id="itemfiles" class="element">
-    <h3><?php echo __('Files'); ?></h3>
-    <div class="element-text"><?php echo item_image_gallery(); ?></div>
+<div>
+    <p><strong>Material Composition: </strong><?php echo(metadata($item, array("MOL Metadata", "Material Composition"))); ?></p>
+    <p><strong>Functional Category: </strong><?php echo(metadata($item, array("MOL Metadata", "Functional Category"))); ?></p>
+    <p><strong>Rights: </strong><?php echo(metadata($item, array("MOL Metadata", "Rights"))); ?></p>
+    <p><strong>Identifier: </strong><?php echo(metadata($item, array("MOL Metadata", "Identifier"))); ?></p>
 </div>
-<?php endif; ?>
 
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
 <?php if (metadata('item', 'Collection Name')): ?>
