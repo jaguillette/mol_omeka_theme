@@ -415,7 +415,17 @@ th {
 #interrogation #interrogation-media > div {
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #444444;
+  display: table;
+}
+#interrogation #interrogation-media > div a {
+  display: table-cell;
+  vertical-align: middle;
+  border-bottom: none;
+}
+#interrogation #interrogation-media > div a img {
+  height: auto;
+  width: 100%;
 }
 
 #questions {

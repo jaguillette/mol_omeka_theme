@@ -14,7 +14,17 @@
 		&>div {
 			width: 100%;
 			height: 100%;
-			background-color: $background-color;
+			background-color: #444444;
+			display: table;
+			a {
+				display: table-cell;
+				vertical-align: middle;
+				border-bottom: none;
+				img {
+					height: auto;
+					width: 100%;
+				}
+			}
 		}
 	}
 }

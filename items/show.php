@@ -9,7 +9,7 @@
 
 <div id="interrogation">
     <div id="questions">
-    <?php 
+    <?php
         $questions=array(
             'What is it?',
             'Why was it made?',
@@ -44,6 +44,7 @@
     <p><strong>Functional Category: </strong><?php echo(implode(", ", metadata($item, array("MOL Metadata", "Functional Category"), array("all"=>true)))); ?></p>
     <p><strong>Rights: </strong><?php echo(implode("<br/>", metadata($item, array("MOL Metadata", "Rights"), array("all"=>true)))); ?></p>
     <p><strong>Identifier: </strong><?php echo(implode("<br/>", metadata($item, array("MOL Metadata", "Identifier"), array("all"=>true)))); ?></p>
+    <p><strong>Sources and Further Reading: </strong><?php echo(implode("<br/>", metadata($item, array("MOL Metadata", "Sources and Further Reading"), array("all"=>true)))); ?></p>
 </div>
 
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
