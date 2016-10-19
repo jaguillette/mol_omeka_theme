@@ -21,8 +21,12 @@
 				vertical-align: middle;
 				border-bottom: none;
 				img {
-					height: auto;
-					width: 100%;
+					max-height: 100%;
+					max-width: 100%;
+					padding: 0;
+					border: none;
+					display: block;
+					margin: auto;
 				}
 			}
 		}
