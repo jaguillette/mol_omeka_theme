@@ -401,6 +401,7 @@ th {
   overflow: hidden;
   display: inline-block;
   width: 100%;
+  height: 26em;
   position: relative;
 }
 #interrogation #interrogation-media {
@@ -424,7 +425,7 @@ th {
   border-bottom: none;
 }
 #interrogation #interrogation-media > div a img {
-  max-height: 100%;
+  max-height: 26em;
   max-width: 100%;
   padding: 0;
   border: none;
@@ -435,7 +436,7 @@ th {
 #questions {
   display: inline-block;
   width: 40%;
-  height: 100%;
+  height: 26em;
   float: left;
   position: relative;
   z-index: 1;
@@ -455,7 +456,7 @@ th {
   left: 100%;
   transition: left 0.5s;
   background-color: white;
-  height: 508px;
+  height: 26em;
   overflow-y: scroll;
 }
 .answer h3 {
